@@ -18,7 +18,7 @@ function submitStory(e) {
         headers: { "Content-Type": "application/json" }
     };
 
-    fetch('http://localhost:3000/', options)
+    fetch('http://localhost:3000/stories', options)
         .then(r => r.json())
         .then(appendStory)
         .then(() => e.target.reset())
