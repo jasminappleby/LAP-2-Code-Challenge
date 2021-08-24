@@ -1,4 +1,4 @@
-const db = require('../dbConfig');
+const db = require('../dbConfig/init');
 
 class Story {
     constructor(data) {
@@ -24,7 +24,7 @@ class Story {
             try {
                 console.log('trying to get a story')
                 const storiesData = await db.query(`SELECT * FROM storyDatabase`);
-                console.log(storiesData)
+                console.log("this is story data" + storiesData)
                 const stories = storiesData.rows.map((d) => new Story(d));
                 resolve(stories);
             } catch (err) {
