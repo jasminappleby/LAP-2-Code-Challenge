@@ -5,6 +5,6 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.get("/", (req, res) => res.send("Telegraph page"));
+server.get("/", (req, res) => res.send("It is story time"));
 
-module.exports = server; 
+module.exports = server;

@@ -6,3 +6,4 @@ CREATE TABLE storyDatabase (
     authorName VARCHAR,
     story VARCHAR;
 );
+

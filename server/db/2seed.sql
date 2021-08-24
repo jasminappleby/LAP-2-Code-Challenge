@@ -1,0 +1,1 @@
+INSERT INTO storyDatabase (title, authorName, story) VALUES ('Small Story', 'storyteller', 'this is the best story ever told');
