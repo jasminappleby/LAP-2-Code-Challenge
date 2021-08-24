@@ -18,6 +18,18 @@ class Story {
             }
         });
     };
+
+    static get all() {
+        return new Promise(async (resolve, reject) => {
+          try {
+            const storiesData = await db.query(`SELECT * FROM storyDatabase;`);
+            const stories = storiesData.rows.map((d) => new Story(d));
+            resolve(stories);
+          } catch (err) {
+            reject("Error retrieving stories");
+          }
+        });
+      }
 }
 
 module.exports = Story
