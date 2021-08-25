@@ -1,4 +1,5 @@
 const form = document.querySelector('#story-form');
+const storyList = document.querySelector('table')
 
 form.addEventListener('submit', submitStory);
 
@@ -35,6 +36,22 @@ function submitStory(e) {
 
 function appendStory(storyData) {
     const newRow = document.createElement('tr');
-    const storyLi = formatStoryTr(storyData, newRow)
+    const storyLi = formatStoryTable(storyData, newRow)
     storyList.append(newRow);
 };
+
+function formatStoryTable(tale, tr) {
+    const titleTd = document.createElement('td');
+    const authorTd = document.createElement('td');
+    const storyTd = document.createElement('td');
+
+    titleTd.textContent = tale.title
+    authorTd.textContent = tale.pseudonym
+    storyTd.textContent = tale.body
+
+    tr.append(titleTd)
+    tr.append(authorTd)
+    tr.append(storyTd)
+
+    return tr
+}
