@@ -1,6 +1,5 @@
 # LAP-2-Code-Challenge
 
-<<<<<<< HEAD
 ## by Jasmin and Cerise you are welcome to look :) 
 =======
 ## How to run 
@@ -21,4 +20,9 @@ Open new node terminal whilst still running this one
 
 Go to the localhost:3000 on your chosen web browser 
 
->>>>>>> cd6427949da084d36589c8d7c60b46d6447f0d7e
+To run the HTML file, follow the below steps (in a new terminal, keeping the server open):
+
+- `cd client` (if you are within another folder, navigate out of it)
+- `open index.html`
+
+
