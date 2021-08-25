@@ -1,5 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+//const database = require('./dbConfig/init ')
+
+
 
 const server = express();
 server.use(cors());

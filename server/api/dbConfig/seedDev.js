@@ -1,7 +1,15 @@
 const db = require('./init');
 const fs = require('fs');
 
-const seeds = fs.readFileSync(__dirname + '/seed.sql').toString();
-console.log(seeds)
+async function connectdb() {
+    const firstSeed = fs.readFileSync(__dirname + '/storyDatabase.sql').toString();
 
-db.query(seeds, () => console.log('Dev database seeded'));
+
+    await db.query(firstSeed);
+
+    const seeds = fs.readFileSync(__dirname + '/seed.sql').toString();
+    console.log(seeds)
+
+    await db.query(seeds)
+}
+connectdb();

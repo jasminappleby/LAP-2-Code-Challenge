@@ -4,6 +4,6 @@ CREATE TABLE storyDatabase (
     id serial PRIMARY KEY,
     title VARCHAR,
     authorName VARCHAR,
-    story VARCHAR;
+    story VARCHAR
 );
 
