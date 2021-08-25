@@ -6,9 +6,7 @@ const Story = require('../models/story');
 // story index route
 router.get('/', async(req, res) => {
     try {
-        console.log('this is a story')
         const stories = await Story.all;
-        console.log('stories')
         res.json({ stories });
     } catch (err) {
         res.status(500).json({ err });

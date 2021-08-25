@@ -24,3 +24,9 @@ function submitStory(e) {
         .then(() => e.target.reset())
         .catch(console.warn)
 };
+
+function appendstory(storyData) {
+    const newRow = document.createElement('tr');
+    const storyLi = formatDogTr(storyData, newRow)
+    storyList.append(newRow);
+};
