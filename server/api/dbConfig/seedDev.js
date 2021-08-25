@@ -11,5 +11,5 @@ async function connectdb() {
     console.log(seeds)
 
     await db.query(seeds)
-}
+};
 connectdb();

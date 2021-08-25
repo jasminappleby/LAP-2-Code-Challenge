@@ -2,6 +2,14 @@ const form = document.querySelector('#story-form');
 
 form.addEventListener('submit', submitStory);
 
+getAllStories();
+
+function getAllStories() {
+    fetch('http://localhost:3000/stories')
+        .then(r => r.json())
+        .then(appendStory)
+        .catch(console.warn)
+};
 
 function submitStory(e) {
     e.preventDefault();
@@ -25,8 +33,8 @@ function submitStory(e) {
         .catch(console.warn)
 };
 
-function appendstory(storyData) {
+function appendStory(storyData) {
     const newRow = document.createElement('tr');
-    const storyLi = formatDogTr(storyData, newRow)
+    const storyLi = formatStoryTr(storyData, newRow)
     storyList.append(newRow);
 };
