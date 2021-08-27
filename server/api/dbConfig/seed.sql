@@ -1,1 +1,1 @@
-INSERT INTO storyDatabase (title, authorName, story) VALUES ('Small Story', 'storyteller', 'this is the best story ever told');
+INSERT INTO storyDatabase (title, psuedonym, story) VALUES ('Small Story', 'storyteller', 'this is the best story ever told');

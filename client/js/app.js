@@ -8,18 +8,18 @@ getAllStories();
 function getAllStories() {
     fetch('http://localhost:3000/stories')
         .then(r => r.json())
-        .then(appendStory)
+        .then(formatStoryTable)
         .catch(console.warn)
 };
 
 function submitStory(e) {
     e.preventDefault();
-
     const storyData = {
         title: e.target.title.value,
         pseudonym: e.target.pseudonym.value,
         body: e.target.body.value,
     };
+    console.log('this is story data' + storyData)
 
     const options = {
         method: 'POST',
@@ -34,13 +34,14 @@ function submitStory(e) {
         .catch(console.warn)
 };
 
-function appendStory(storyData) {
-    const newRow = document.createElement('tr');
-    const storyLi = formatStoryTable(storyData, newRow)
-    storyList.append(newRow);
-};
+// function appendStory(storyData) {
+//     //const newRow = document.createElement('tr');
+//     const storyList = formatStoryTable(storyData, newRow)
+//         //storyList.append(newRow);
+// };
 
-function formatStoryTable(tale, tr) {
+function formatStoryTable(tale) {
+    const newRow = document.createElement('tr');
     const titleTd = document.createElement('td');
     const authorTd = document.createElement('td');
     const storyTd = document.createElement('td');
@@ -49,9 +50,9 @@ function formatStoryTable(tale, tr) {
     authorTd.textContent = tale.pseudonym
     storyTd.textContent = tale.body
 
-    tr.append(titleTd)
-    tr.append(authorTd)
-    tr.append(storyTd)
+    newRow.append(titleTd)
+    newRow.append(authorTd)
+    newRow.append(storyTd)
 
-    return tr
+    return newRow
 }

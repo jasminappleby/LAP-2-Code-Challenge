@@ -7,6 +7,7 @@ const Story = require('../models/story');
 router.get('/', async(req, res) => {
     try {
         const stories = await Story.all;
+        console.log(stories)
         res.json({ stories });
     } catch (err) {
         res.status(500).json({ err });
@@ -16,7 +17,7 @@ router.get('/', async(req, res) => {
 // Create story route
 router.post('/', async(req, res) => {
     try {
-        const story = await Story.create(req.body.title, req.body.authorName, req.body.story);
+        const story = await Story.create(req.body.title, req.body.psuedonym, req.body.story);
         res.json(story);
     } catch (err) {
         res.status(404).json({ err });
